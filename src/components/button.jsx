@@ -38,9 +38,9 @@ function Button({ className, variant, size, asChild = false, ...props }) {
   const Comp = asChild ? Slot : "button";
 
   return (
-    <Comp
+    <Comp 
       data-slot="button"
-      className={cn(buttonVariants({ variant, size }), className)}
+      className={cn(buttonVariants({ variant, size }), "bg-black text-white hover:bg-black/99",className)}
       {...props}
     />
   );
