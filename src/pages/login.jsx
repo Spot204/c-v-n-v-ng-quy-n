@@ -26,7 +26,7 @@ export default function Login({ onLogin, onRegister }) {
                         <Input id="password" type="password" placeholder="Nhập mật khẩu của bạn" />
                     </div>
                     <Button className="w-full" onClick={handleLogin}>Đăng Nhập</Button>
-                    <Label className="text-blue-500 underline hover:text-blue-400 hover:cursor-pointer"
+                    <Label className="text-blue-500 underline hover:text-blue-400 hover:cursor-pointer w-fit"
                     onClick={handleRegister}> Đăng ký </Label>
                 </CardContent>
             </Card>

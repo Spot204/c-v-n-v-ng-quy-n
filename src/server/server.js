@@ -1,12 +1,15 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import connectDB from './config/connectDB.js';
+import express from "express";
+import dotenv from "dotenv";
+import connectDB from "./config/connectDB.js";
+import createAccount from "./routes/createAccount.js";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 connectDB();
+
+app.use("/api/createAccount", createAccount);
 
 
 app.listen(PORT, () => {

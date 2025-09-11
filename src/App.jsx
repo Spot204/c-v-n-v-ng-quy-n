@@ -4,7 +4,7 @@ import DecisionForm from "./pages/DecisionForm";
 import DecisionAnalysis from "./pages/DecisionAnalysis";
 import ProgressTracker from "./pages/ProgressTracker";
 import Login from "./pages/login";
-import Register from "./pages/Resgister";
+import Register from "./pages/Register";
 import { Button } from "./components/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/card";
 import { Badge } from "./components/badge";
@@ -38,6 +38,8 @@ export default function App() {
     else if (currentStep === "analysis") setCurrentStep("decisions");
     else if (currentStep === "tracking") setCurrentStep("analysis");
   };
+
+
 
   const renderWelcome = () => (
     <div className=" justify-center items-center w-full h-full">
@@ -160,7 +162,9 @@ export default function App() {
     onRegister={() => setCurrentStep("resgister")}/>;
   }
   if (currentStep === "resgister") {
-    return <Register onRegister={() => setCurrentStep("welcome")} 
+    return <Register onRegister={() => {
+
+    }} 
     onLogin={() => setCurrentStep("login")}/>;
   }
 
