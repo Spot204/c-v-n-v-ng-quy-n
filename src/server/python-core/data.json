@@ -1,0 +1,268 @@
+{
+  "Sức khỏe": {
+    "Thấp": {
+      "Giấc ngủ": 0.5,
+      "độ căng thẳng": 0.6,
+      "Vận động": 0.5,
+      "sức khỏe tổng quát": 0.6,
+      "Thu nhập": 0.3,
+      "Chi tiêu": 0.3,
+      "Tiết kiệm": 0.2,
+      "giải trí": 0.4,
+      "giờ học tập mỗi ngày": 0.3,
+      "giờ hoạt động xã hội": 0.5,
+      "giờ làm việc": 0.3,
+      "thời gian rảnh": 0.5
+    },
+    "Trung bình": {
+      "Giấc ngủ": 0.7,
+      "độ căng thẳng": 0.8,
+      "Vận động": 0.7,
+      "sức khỏe tổng quát": 0.8,
+      "Thu nhập": 0.4,
+      "Chi tiêu": 0.4,
+      "Tiết kiệm": 0.3,
+      "giải trí": 0.5,
+      "giờ học tập mỗi ngày": 0.4,
+      "giờ hoạt động xã hội": 0.6,
+      "giờ làm việc": 0.4,
+      "thời gian rảnh": 0.6
+    },
+    "Cao": {
+      "Giấc ngủ": 1.0,
+      "độ căng thẳng": 1.0,
+      "Vận động": 1.0,
+      "sức khỏe tổng quát": 1.0,
+      "Thu nhập": 0.5,
+      "Chi tiêu": 0.5,
+      "Tiết kiệm": 0.4,
+      "giải trí": 0.6,
+      "giờ học tập mỗi ngày": 0.5,
+      "giờ hoạt động xã hội": 0.7,
+      "giờ làm việc": 0.5,
+      "thời gian rảnh": 0.7
+    }
+  },
+
+  "Tiết kiệm": {
+    "Thấp": {
+      "Giấc ngủ": 0.3,
+      "độ căng thẳng": 0.4,
+      "Vận động": 0.3,
+      "sức khỏe tổng quát": 0.4,
+      "Thu nhập": 0.5,
+      "Chi tiêu": 0.6,
+      "Tiết kiệm": 0.5,
+      "giải trí": 0.5,
+      "giờ học tập mỗi ngày": 0.2,
+      "giờ hoạt động xã hội": 0.3,
+      "giờ làm việc": 0.5,
+      "thời gian rảnh": 0.4
+    },
+    "Trung bình": {
+      "Giấc ngủ": 0.5,
+      "độ căng thẳng": 0.6,
+      "Vận động": 0.5,
+      "sức khỏe tổng quát": 0.6,
+      "Thu nhập": 0.8,
+      "Chi tiêu": 0.9,
+      "Tiết kiệm": 0.8,
+      "giải trí": 0.3,
+      "giờ học tập mỗi ngày": 0.3,
+      "giờ hoạt động xã hội": 0.5,
+      "giờ làm việc": 0.7,
+      "thời gian rảnh": 0.5
+    },
+    "Cao": {
+      "Giấc ngủ": 0.6,
+      "độ căng thẳng": 0.8,
+      "Vận động": 0.6,
+      "sức khỏe tổng quát": 0.7,
+      "Thu nhập": 1.0,
+      "Chi tiêu": 1.0,
+      "Tiết kiệm": 1.0,
+      "giải trí": 0.2,
+      "giờ học tập mỗi ngày": 0.4,
+      "giờ hoạt động xã hội": 0.6,
+      "giờ làm việc": 0.9,
+      "thời gian rảnh": 0.6
+    }
+  },
+  "Giáo dục": {
+    "Thấp": {
+      "Giấc ngủ": 0.4,
+      "độ căng thẳng": 0.5,
+      "Vận động": 0.3,
+      "sức khỏe tổng quát": 0.4,
+      "Thu nhập": 0.2,
+      "Chi tiêu": 0.3,
+      "Tiết kiệm": 0.3,
+      "giải trí": 0.5,
+      "giờ học tập mỗi ngày": 0.6,
+      "giờ hoạt động xã hội": 0.4,
+      "giờ làm việc": 0.3,
+      "thời gian rảnh": 0.5
+    },
+    "Trung bình": {
+      "Giấc ngủ": 0.6,
+      "độ căng thẳng": 0.7,
+      "Vận động": 0.5,
+      "sức khỏe tổng quát": 0.6,
+      "Thu nhập": 0.4,
+      "Chi tiêu": 0.5,
+      "Tiết kiệm": 0.4,
+      "giải trí": 0.3,
+      "giờ học tập mỗi ngày": 0.8,
+      "giờ hoạt động xã hội": 0.6,
+      "giờ làm việc": 0.5,
+      "thời gian rảnh": 0.4
+    },
+    "Cao": {
+      "Giấc ngủ": 0.8,
+      "độ căng thẳng": 0.9,
+      "Vận động": 0.6,
+      "sức khỏe tổng quát": 0.7,
+      "Thu nhập": 0.5,
+      "Chi tiêu": 0.6,
+      "Tiết kiệm": 0.5,
+      "giải trí": 0.2,
+      "giờ học tập mỗi ngày": 1.0,
+      "giờ hoạt động xã hội": 0.7,
+      "giờ làm việc": 0.6,
+      "thời gian rảnh": 0.3
+    }
+  },
+  "Mua sắm": {
+    "Thấp": {
+      "Giấc ngủ": 0.2,
+      "độ căng thẳng": 0.3,
+      "Vận động": 0.2,
+      "sức khỏe tổng quát": 0.3,
+      "Thu nhập": 0.4,
+      "Chi tiêu": 0.5,
+      "Tiết kiệm": 0.3,
+      "giải trí": 0.6,
+      "giờ học tập mỗi ngày": 0.2,
+      "giờ hoạt động xã hội": 0.5,
+      "giờ làm việc": 0.4,
+      "thời gian rảnh": 0.5
+    },
+    "Trung bình": {
+      "Giấc ngủ": 0.3,
+      "độ căng thẳng": 0.5,
+      "Vận động": 0.4,
+      "sức khỏe tổng quát": 0.5,
+      "Thu nhập": 0.7,
+      "Chi tiêu": 0.8,
+      "Tiết kiệm": 0.5,
+      "giải trí": 0.7,
+      "giờ học tập mỗi ngày": 0.3,
+      "giờ hoạt động xã hội": 0.6,
+      "giờ làm việc": 0.6,
+      "thời gian rảnh": 0.6
+    },
+    "Cao": {
+      "Giấc ngủ": 0.4,
+      "độ căng thẳng": 0.6,
+      "Vận động": 0.5,
+      "sức khỏe tổng quát": 0.6,
+      "Thu nhập": 0.9,
+      "Chi tiêu": 1.0,
+      "Tiết kiệm": 0.7,
+      "giải trí": 0.8,
+      "giờ học tập mỗi ngày": 0.4,
+      "giờ hoạt động xã hội": 0.7,
+      "giờ làm việc": 0.8,
+      "thời gian rảnh": 0.7
+    }
+  },
+
+  "Giải trí": {
+    "Thấp": {
+      "Giấc ngủ": 0.3,
+      "độ căng thẳng": 0.4,
+      "Vận động": 0.3,
+      "sức khỏe tổng quát": 0.4,
+      "Thu nhập": 0.3,
+      "Chi tiêu": 0.4,
+      "Tiết kiệm": 0.2,
+      "giải trí": 0.6,
+      "giờ học tập mỗi ngày": 0.2,
+      "giờ hoạt động xã hội": 0.5,
+      "giờ làm việc": 0.3,
+      "thời gian rảnh": 0.6
+    },
+    "Trung bình": {
+      "Giấc ngủ": 0.5,
+      "độ căng thẳng": 0.6,
+      "Vận động": 0.5,
+      "sức khỏe tổng quát": 0.6,
+      "Thu nhập": 0.5,
+      "Chi tiêu": 0.6,
+      "Tiết kiệm": 0.3,
+      "giải trí": 0.8,
+      "giờ học tập mỗi ngày": 0.3,
+      "giờ hoạt động xã hội": 0.7,
+      "giờ làm việc": 0.4,
+      "thời gian rảnh": 0.8
+    },
+    "Cao": {
+      "Giấc ngủ": 0.6,
+      "độ căng thẳng": 0.8,
+      "Vận động": 0.7,
+      "sức khỏe tổng quát": 0.8,
+      "Thu nhập": 0.6,
+      "Chi tiêu": 0.7,
+      "Tiết kiệm": 0.4,
+      "giải trí": 1.0,
+      "giờ học tập mỗi ngày": 0.4,
+      "giờ hoạt động xã hội": 0.9,
+      "giờ làm việc": 0.5,
+      "thời gian rảnh": 1.0
+    }
+  },
+  "Khác": {
+    "Thấp": {
+      "Giấc ngủ": 0.4,
+      "độ căng thẳng": 0.5,
+      "Vận động": 0.4,
+      "sức khỏe tổng quát": 0.5,
+      "Thu nhập": 0.4,
+      "Chi tiêu": 0.4,
+      "Tiết kiệm": 0.4,
+      "giải trí": 0.5,
+      "giờ học tập mỗi ngày": 0.4,
+      "giờ hoạt động xã hội": 0.5,
+      "giờ làm việc": 0.4,
+      "thời gian rảnh": 0.5
+    },
+    "Trung bình": {
+      "Giấc ngủ": 0.6,
+      "độ căng thẳng": 0.7,
+      "Vận động": 0.6,
+      "sức khỏe tổng quát": 0.7,
+      "Thu nhập": 0.6,
+      "Chi tiêu": 0.6,
+      "Tiết kiệm": 0.6,
+      "giải trí": 0.6,
+      "giờ học tập mỗi ngày": 0.5,
+      "giờ hoạt động xã hội": 0.6,
+      "giờ làm việc": 0.6,
+      "thời gian rảnh": 0.6
+    },
+    "Cao": {
+      "Giấc ngủ": 0.7,
+      "độ căng thẳng": 0.8,
+      "Vận động": 0.7,
+      "sức khỏe tổng quát": 0.8,
+      "Thu nhập": 0.7,
+      "Chi tiêu": 0.7,
+      "Tiết kiệm": 0.8,
+      "giải trí": 0.7,
+      "giờ học tập mỗi ngày": 0.6,
+      "giờ hoạt động xã hội": 0.7,
+      "giờ làm việc": 0.7,
+      "thời gian rảnh": 0.7
+    }
+  }
+}

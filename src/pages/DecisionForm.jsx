@@ -56,9 +56,10 @@ export default function DecisionForm({ onDecisionsSubmit, initialDecisions }) {
 
   const categoryLabels = {
     education: 'Giáo dục',
-    travel: 'Du lịch',
+    travel: 'Tiết kiệm',
     purchase: 'Mua sắm',
     health: 'Sức khỏe',
+    entertainment: 'Giải trí',
     other: 'Khác'
   };
 
