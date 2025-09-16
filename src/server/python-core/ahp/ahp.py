@@ -1,4 +1,5 @@
 import numpy as np
+import json
 
 def normalize_matrix(matrix):
     """
@@ -46,51 +47,84 @@ def calculate_total_score(weights, scores):
         total[option] = score
     return total
 
+def calculate_ahp(scores):
+    main_matrix = np.array([
+        [1,4,3],
+        [1/4,1,1/2],
+        [1/3,2,1]
+    ])
 
-main_matrix = np.array([
-    [1,2,4],
-    [1/2,1,2],
-    [1/4,1/2,1]
-])
+    # Tính trọng số tầng 1
+    normalized_main = normalize_matrix(main_matrix)
+    main_weights = calculate_priority_vector(normalized_main)
+    cr_main = consistency_ratio(main_matrix, main_weights)
 
-# Tính trọng số tầng 1
-normalized_main = normalize_matrix(main_matrix)
-main_weights = calculate_priority_vector(normalized_main)
-cr_main = consistency_ratio(main_matrix, main_weights)
-
-level1_named = {
-    'Sức khỏe': main_weights[0],
-    'Tài chính': main_weights[1],
-    'Thói quen': main_weights[2]
-}
+    level1_named = {
+        'Sức khỏe': main_weights[0],
+        'Tài chính': main_weights[2],
+        'Thói quen': main_weights[1]
+    }
 
 
-level2_weights = {
-    'weights_suckhoe' : {
-    'Giấc ngủ': 0.40,
+    level2_weights = {
+        'weights_suckhoe' : {
+        'Giấc ngủ': 0.45,
     'Độ căng thẳng': 0.30,
-    'Vận động': 0.20,
+    'Vận động': 0.15,
     'Sức khỏe tổng quát': 0.10
-},
-    'weights_taichinh' : {
-    'Thu nhập': 0.40,
-    'Chi tiêu': 0.30,
+
+    },
+        'weights_taichinh' : {
+         'Chi tiêu': 0.35,
+    'Thu nhập': 0.30,
     'Tiết kiệm': 0.20,
-    'Giải trí': 0.10
-},
-    'weights_thoiquen' : {
-    'Giờ học tập mỗi ngày': 0.25,
-    'Giờ hoạt động xã hội': 0.25,
+    'Giải trí': 0.15
+
+    },
+        'weights_thoiquen' : {
+        'Giờ học tập mỗi ngày': 0.40,
     'Giờ làm việc': 0.25,
-    'Thời gian rảnh': 0.25
-}
-}
+    'Thời gian rảnh': 0.20,
+    'Giờ hoạt động xã hội': 0.15
 
-final_weights = aggregate_weights(level1_named, level2_weights)
-scores = {
-    'A':{},
-    'B':{},
-    'C':{}
-}
+    }
+    }
 
-result = calculate_total_score(final_weights, scores)
+    final_weights = aggregate_weights(level1_named, level2_weights)
+
+    result = calculate_total_score(final_weights,scores)
+    
+    return result
+
+def build_scores_from_reference(input_data, reference_data):
+    scores = {
+        'A':{},
+        'B':{},
+        'C':{}
+    }
+    for option, info in input_data.items():
+        muctieu = info.get('muctieu')
+        mucdo = info.get('mucdo')
+
+        if not muctieu or not mucdo:
+            print(f"err")
+            continue
+
+        found = False
+        for category, levels in reference_data.items():
+            if mucdo in levels and muctieu in levels[mucdo]:
+                weight = levels[mucdo][muctieu]
+                scores[option][muctieu]=weight
+                found = True
+                break
+    return scores
+
+def lookup_data(datas_list):
+    with open('../data.json','r' , encoding='utf-8') as f:
+        reference_data=json.load(f)
+    
+    scores = build_scores_from_reference(datas_list, reference_data)
+    result = calculate_ahp(scores)
+    return result
+
+
