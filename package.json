@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/server/server.js",
+    "start1":"python src/server/python-core/main.py",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -22,6 +23,7 @@
     "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "lucide-react": "^0.542.0",

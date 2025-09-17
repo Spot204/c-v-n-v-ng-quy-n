@@ -4,8 +4,9 @@ import { Input } from '../components/input';
 import { Label } from '../components/label';
 import { Button } from '../components/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/tabs';
+import { createDataPerson } from '../services/createDataPerson';
 
-export default function PersonalDataForm({ onDataSubmit, initialData }) {
+export default function PersonalDataForm({ onDataSubmit, initialData, idperson }) {
   const [formData, setFormData] = useState({
     monthlyIncome: initialData?.monthlyIncome || "",
     monthlyExpenses: initialData?.monthlyExpenses || "",
@@ -28,9 +29,36 @@ export default function PersonalDataForm({ onDataSubmit, initialData }) {
     }));
   };
 
-  const handleSubmit = () => {
-    onDataSubmit(formData);
-  };
+ const handleSubmit = async () => {
+  try {
+    const payload = {
+      idperson,
+      thunhap: formData.monthlyIncome,
+      chitieu: formData.monthlyExpenses,
+      tietkiem: formData.savings,
+      giaitri: formData.entertainmentBudget,
+      ngu: formData.sleepHours,
+      taptheduc: formData.exerciseHours,
+      stress: formData.stressLevel,
+      sk: formData.healthScore,
+      hoctap: formData.studyHours,
+      hdxahoi: formData.socialHours,
+      lamviec: formData.workHours,
+      tgranh: formData.freeTime
+    };
+
+    const res = await createDataPerson(payload);
+
+    if (res?.data?.message === "Register successful") {
+      console.log("Lưu thành công");
+      onDataSubmit(formData);
+    }
+  } catch (err) {
+    console.log("Lưu thất bại");
+    console.error(err);
+  }
+};
+
 
   return (
     <Card className="w-full max-w-4xl mx-auto bg-white">
@@ -200,7 +228,7 @@ export default function PersonalDataForm({ onDataSubmit, initialData }) {
         </Tabs>
 
         <div className="mt-6">
-          <Button onClick={handleSubmit} className="w-full">
+          <Button onClick={handleSubmit} className="w-full cursor-pointer">
             Lưu Thông Tin & Tiếp Tục
           </Button>
         </div>

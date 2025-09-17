@@ -17,11 +17,13 @@ import {
   User,
   Settings,
 } from "lucide-react";
+import { checkPerson } from "./services/createDataPerson";
 
 export default function App() {
   const [currentStep, setCurrentStep] = useState("login"); // "welcome", "personal-data", "decisions", "analysis", "tracking"
   const [personalData, setPersonalData] = useState(null);
   const [decisions, setDecisions] = useState([]);
+  const [idUser, setIdUser] = useState(null);
 
   const handlePersonalDataSubmit = (data) => {
     setPersonalData(data);
@@ -38,8 +40,6 @@ export default function App() {
     else if (currentStep === "analysis") setCurrentStep("decisions");
     else if (currentStep === "tracking") setCurrentStep("analysis");
   };
-
-
 
   const renderWelcome = () => (
     <div className=" justify-center items-center w-full h-full">
@@ -114,6 +114,7 @@ export default function App() {
         <PersonalDataForm
           onDataSubmit={handlePersonalDataSubmit}
           initialData={personalData || undefined}
+          idperson={idUser}
         />
       );
     }
@@ -158,14 +159,26 @@ export default function App() {
     return renderWelcome();
   }
   if (currentStep === "login") {
-    return <Login onLogin={() => setCurrentStep("welcome")} 
-    onRegister={() => setCurrentStep("resgister")}/>;
+    return (
+      <Login
+        onLogin={() => {
+          const dataPerson = checkPerson(idUser);
+          if (dataPerson.hasData == "true") {
+            setPersonalData(dataPerson.data);
+            setCurrentStep("decisions");
+          } else {
+            setCurrentStep("welcome");
+          }
+        }}
+        onRegister={() => setCurrentStep("resgister")}
+        setIdUser={setIdUser}
+      />
+    );
   }
   if (currentStep === "resgister") {
-    return <Register onRegister={() => {
-
-    }} 
-    onLogin={() => setCurrentStep("login")}/>;
+    return (
+      <Register onRegister={() => {}} onLogin={() => setCurrentStep("login")} />
+    );
   }
 
   return (

@@ -19,7 +19,7 @@ router.post('/createAccount', async (req, res) => {
         const passwordHash = await bcrypt.hash(password, salt);
         const newAccount = new Account({ username, email, passwordHash });
         await newAccount.save();
-        res.status(201).json({ message: 'Account created successfully' });
+        res.status(201).json({ message: 'Register successful' });
     } catch (error) {
         console.error('Error creating account:', error);
         res.status(500).json({ message: 'Server error' });

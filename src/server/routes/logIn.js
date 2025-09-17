@@ -10,15 +10,19 @@ router.post("/logIn", async (req, res) => {
         return res.status(400).json({ message: 'All fields are required' });
     }
     try {
-        const user = await Account.find({ username });
+        const user = await Account.findOne({ username });
         if (!user) {
             return res.status(400).json({ message: 'Invalid username or password' });
         }
-        const isMatch = await bcrypt.compare(password, user[0].passwordHash);
+        const isMatch = await bcrypt.compare(password, user.passwordHash);
+        console.log({isMatch})
         if (!isMatch) {
             return res.status(400).json({ message: 'Invalid username or password' });
         }
-        res.status(200).json({ message: 'Login successful' });
+        res.status(200).json({ message: 'Login successful',
+            id: user._id
+        });
+        
     } catch (error) {
         console.error('Error logging in:', error);
         res.status(500).json({ message: 'Server error' });

@@ -1,7 +1,7 @@
 from flask_cors import CORS
 from flask import Flask, request, jsonify
 
-from ahp import lookup_data
+from ahp.ahp import lookup_data
 
 app =  Flask(__name__)
 CORS(app)
