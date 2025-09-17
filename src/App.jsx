@@ -40,7 +40,7 @@ export default function App() {
     else if (currentStep === "analysis") setCurrentStep("decisions");
     else if (currentStep === "tracking") setCurrentStep("analysis");
   };
-
+  
   const renderWelcome = () => (
     <div className=" justify-center items-center w-full h-full">
       <div className=" flex min-h-[950px] items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
